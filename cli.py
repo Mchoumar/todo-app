@@ -1,6 +1,6 @@
 from functions import get_todos, write_todos
 from time import strftime
-now_time = strftime("%b %d, %Y %H:%M")
+now_time = strftime("%b %d, %Y %H:%M:%S")
 print("It is", now_time)
 
 prompt = "Type add, show, edit, complete, or exit: "
