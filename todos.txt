@@ -1,4 +1,3 @@
-I want to go die
 go to amy's house
 test for the program
 make a good app
@@ -8,4 +7,3 @@ the king
 the world goes on fire
 Another try
 success
-let test

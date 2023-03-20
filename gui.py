@@ -3,7 +3,9 @@ import PySimpleGUI as sg
 layout = [[sg.Text("Type in a to-do")],
           [sg.InputText(tooltip="Enter something", key="todo"), sg.Button("Add")],
           [sg.Listbox(values=get_todos(), key="todos",
-                      enable_events=True, size=[45, 10]), sg.Button("Edit")]]
+                      enable_events=True, size=[45, 10]),
+           sg.Button("Edit"), sg.Button("Complete")],
+          [sg.Button("Exit")]]
 
 window = sg.Window('My To-Do-App',
                    layout,
@@ -33,6 +35,15 @@ while True:
             window['todos'].update(values=todos)
         case "todos":
             window['todo'].update(value=values['todos'][0])
+        case "Complete":
+            todo_to_complete = values['todos'][0]
+            todos = get_todos()
+            todos.remove((todo_to_complete))
+            write_todos(todos)
+            window['todos'].update(values=todos)
+            window['todo'].update(value="")
+        case "Exit":
+            break
         case sg.WIN_CLOSED:
             break
 
